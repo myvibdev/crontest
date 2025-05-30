@@ -3,6 +3,7 @@ name: Run Update Periodically
 on:
   schedule:
     - cron: '*/5 * * * *' # Schedule to run every minute
+  workflow_dispatch:
 
 jobs:
   test:
@@ -12,7 +13,7 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v3
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
